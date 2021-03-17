@@ -12,5 +12,5 @@ BEGIN
     v_OrdersCount := f_CountOrders();
 
     DBMS_OUTPUT.PUT_LINE('Number of commands for the client : ' || v_ClientID ||
-                         'is: ' || v_OrdersCount);
+                         ' is: ' || v_OrdersCount);
 end;

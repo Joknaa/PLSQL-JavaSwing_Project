@@ -11,12 +11,12 @@ DECLARE
         FROM product WHERE product.commandID IN (
             SELECT command.ID FROM command WHERE command.ProductID = v_ProductID
             );
-
-        RETURN v_ProductPrice * v_TotalQuantitySold;
+        v_Turnover = v_ProductPrice * v_TotalQuantitySold;
+        RETURN v_Turnover;
     END f_CalculateTurnover;
 BEGIN
     v_ProductTurnover := f_CalculateTurnover(v_ProductID);
 
-    DBMS_OUTPUT.PUT_LINE('The turnover for this product ' || v_ProductID ||
-                         'is: ' || v_ProductTurnover);
+    DBMS_OUTPUT.PUT_LINE('The turnover for the product ' || v_ProductID ||
+                         ' is: ' || v_ProductTurnover);
 end;
