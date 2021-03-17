@@ -19,7 +19,7 @@ DECLARE
         WHERE ROWNUM <= 1;
         RETURN v_MaxClientID;
     END f_GetMaxClient;
-    
+
 BEGIN
     v_MinClientID := f_GetMinClient();
     v_MaxClientID := f_GetMaxClient();

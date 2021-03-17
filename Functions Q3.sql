@@ -6,7 +6,7 @@ DECLARE
     v_CmdEuroValue      NUMBER;
     v_CmdDollarValue    NUMBER;
 
-    CURSOR c_CommandTotalPrice IS SELECT * FROM command WHERE command.id = v_CommandID;
+    CURSOR c_CommandTotalPrice IS SELECT command.TotalTTC FROM command WHERE command.CommandID = v_CommandID;
 
     FUNCTION f_MAD2EURO(v_MadValue NUMBER) RETURN NUMBER IS v_EuroValue NUMBER;
         BEGIN
