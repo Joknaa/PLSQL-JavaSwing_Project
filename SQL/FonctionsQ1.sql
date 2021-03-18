@@ -10,11 +10,10 @@ DECLARE
         DBMS_OUTPUT.PUT_LINE('The Orders done by the client ' || v_ClientID || ' are: ');
 
         OPEN  c_Commands;
-        LOOP
-            FETCH c_Commands INTO v_OrdersCount;
-            EXIT WHEN v_OrdersCount%NOTFOUND;
-            DBMS_OUTPUT.PUT_LINE(v_OrdersCount);
-        end loop;
+        FOR v_command IN c_Commands LOOP
+            DBMS_OUTPUT.PUT_LINE(v_command);
+        END LOOP;
+        CLOSE c_Commands;
 
         RETURN v_OrdersCount;
     END f_CountOrders;
