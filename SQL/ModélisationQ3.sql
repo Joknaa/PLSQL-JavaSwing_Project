@@ -1,11 +1,8 @@
 
 
-INSERT INTO clientlist VALUES(1, 'BENTAJER','Mhannech II, Tetouan', 1,TO_DATE('20191202','YYYYMMDD'), 
-'ahmed@mail.com', 'A passé une grosse commande en janvier 2018 , depuis, plus rien. Penser à reprendre contact');
-INSERT INTO clientlist VALUES(2, 'ESSEGHIRI','Res Naoufal app 8, Maarif, Casablanca', 2,TO_DATE('20181027','YYYYMMDD'), 
-'youssef@mail.com','Client contactée grâce à M. Houty de Casablanca. Remise de 10% sur ladernière commande suite à un retard d’envoi');
-INSERT INTO clientlist VALUES(3, 'Belmir', 'Tetouan', 2, TO_DATE('20181120','YYYYMMDD'), 
-'karim@mail.com',  'Client fidèle qui passe des commandes régulièrement (environ une par mois)');
+INSERT INTO clientlist VALUES(1, 'BENTAJER','Mhannech II, Tetouan', 1,TO_DATE('20191202','YYYYMMDD'), 'ahmed@mail.com', 'A passé une grosse commande en janvier 2018 , depuis, plus rien. Penser à reprendre contact');
+INSERT INTO clientlist VALUES(2, 'ESSEGHIRI','Res Naoufal app 8, Maarif, Casablanca', 2,TO_DATE('20181027','YYYYMMDD'), 'youssef@mail.com','Client contactée grâce à M. Houty de Casablanca. Remise de 10% sur ladernière commande suite à un retard d’envoi');
+INSERT INTO clientlist VALUES(3, 'Belmir', 'Tetouan', 2, TO_DATE('20181120','YYYYMMDD'), 'karim@mail.com',  'Client fidèle qui passe des commandes régulièrement (environ une par mois)');
 
 INSERT INTO regions VALUES(1, 'Tanger-Tétouan-Al Hoceïma');
 INSERT INTO regions VALUES(2, 'Région de l Oriental');
