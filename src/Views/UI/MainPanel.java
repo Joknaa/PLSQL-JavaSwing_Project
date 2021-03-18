@@ -317,13 +317,10 @@ public class MainPanel extends JPanel implements IPanel, ActionListener {
     private void ListSelectionChanged(ListSelectionEvent evt) {
         String selectedValue = list.getSelectedValue();
         if (!evt.getValueIsAdjusting()) {
-            EnableButtons(runButton, openButton);
+            openButton.setEnabled(true);
+            runButton.setEnabled(list.getSelectedIndex() > 2);
             OnListSelection_UpdateDescription(selectedValue, OutputTextArea);
         }
-    }
-
-    private void EnableButtons(JButton... buttons){
-        for (JButton button : buttons) { button.setEnabled(true);}
     }
 
     @Override

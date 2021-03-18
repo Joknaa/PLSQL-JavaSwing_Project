@@ -1,3 +1,5 @@
+------------fonct6
+SET SERVEROUTPUT ON;
 DECLARE
     v_ProductID           int :=: v_ProductID;
     v_ProductPrice        int;

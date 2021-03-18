@@ -1,6 +1,6 @@
 CREATE OR REPLACE TRIGGER delivered
     AFTER UPDATE 
-    ON COMMANDE
+    ON COMMAND
     FOR EACH ROW
 BEGIN
     IF :New.situation = 1 THEN

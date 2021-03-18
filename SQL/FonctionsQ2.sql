@@ -1,3 +1,6 @@
+
+------------fonct2
+SET SERVEROUTPUT ON;
 DECLARE
     v_MinClientID         int;
     v_MaxClientID         int;

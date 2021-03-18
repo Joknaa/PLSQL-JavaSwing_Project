@@ -1,19 +1,22 @@
+-------fonct3
+SET SERVEROUTPUT ON;
+
 DECLARE
     v_CommandID         int :=: v_CommandID;
-    v_CommandTotalPrice NUMBER;
+    v_CommandTotalPrice float;
     v_ConvertToEuro     boolean :=: v_ConvertToEuro;
     v_ConvertToDollar   boolean :=: v_ConvertToDollar;
-    v_CmdEuroValue      NUMBER;
-    v_CmdDollarValue    NUMBER;
+    v_CmdEuroValue      float;
+    v_CmdDollarValue    float;
 
     CURSOR c_CommandTotalPrice IS SELECT command.TotalTTC FROM command WHERE command.CommandID = v_CommandID;
 
-    FUNCTION f_MAD2EURO(v_MadValue NUMBER) RETURN NUMBER IS v_EuroValue NUMBER;
+    FUNCTION f_MAD2EURO(v_MadValue float) RETURN float IS v_EuroValue float;
         BEGIN
             v_EuroValue := v_MadValue * 10;
         RETURN v_EuroValue;
     end f_MAD2EURO;
-    FUNCTION f_MAD2DOLLAR(v_MadValue NUMBER) RETURN NUMBER IS v_DollarValue NUMBER;
+    FUNCTION f_MAD2DOLLAR(v_MadValue float) RETURN float IS v_DollarValue float;
         BEGIN
             v_DollarValue := v_MadValue * 10;
         RETURN v_DollarValue;
@@ -34,3 +37,4 @@ BEGIN
     end if;
 
 end;
+show error;

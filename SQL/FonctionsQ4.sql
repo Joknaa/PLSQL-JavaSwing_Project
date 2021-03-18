@@ -1,6 +1,8 @@
+---------fonct4
+SET SERVEROUTPUT ON;
 DECLARE
-    v_CategoryID    int :=: v_CatagoryID;
-    v_ArticleCount  int;
+    v_CategoryID int :=: v_CategoryID;
+    v_ArticleCount int;
 
     FUNCTION f_CountArticles RETURN NUMBER IS v_TotalArticles NUMBER;
     BEGIN
