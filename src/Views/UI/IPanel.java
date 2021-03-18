@@ -1,4 +1,4 @@
-package MVPViews.UI;
+package Views.UI;
 
 import javax.swing.*;
 

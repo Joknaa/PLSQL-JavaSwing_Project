@@ -1,13 +1,13 @@
-package MVPPresenters;
+package Presenters;
 
-import MVPModels.DataBaseModel;
+import Models.DataBaseModel;
 
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.sql.*;
 
-import static MVPPresenters.OutputPresenter.*;
+import static Presenters.OutputPresenter.*;
 
 public class DataBasePresenter {
     private static final String url = DataBaseModel.GetUrl();

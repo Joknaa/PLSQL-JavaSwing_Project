@@ -1,9 +1,9 @@
-package MVPViews.UI;
+package Views.UI;
 
 import javax.swing.plaf.basic.BasicScrollBarUI;
 import javax.swing.event.*;
 import javax.swing.*;
-import static MVPViews.OutputView.*;
+import static Views.OutputView.*;
 import static javax.swing.GroupLayout.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

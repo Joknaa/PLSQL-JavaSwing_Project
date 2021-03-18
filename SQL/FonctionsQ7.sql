@@ -8,7 +8,7 @@ DECLARE
     BEGIN
         SELECT SUM(command.TotalTTC) INTO v_TotalAnnualTurnover FROM command
         WHERE command.commandDate
-            BETWEEN  CONCAT(v_Year,'-00-00') AND CONCAT(v_Year, '12-31');
+            BETWEEN  TO_DATE(CONCAT(v_Year,'0000') ,'YYYYMMDD) AND TO_DATE(CONCAT(v_Year,'1231') ,'YYYYMMDD) ;
         RETURN v_TotalAnnualTurnover;
     END f_CalculateTurnover;
 BEGIN
@@ -17,3 +17,5 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('The turnover for the year ' || v_Year ||
                          ' is: ' || v_ProductTurnover);
 end;
+
+

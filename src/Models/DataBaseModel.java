@@ -1,4 +1,4 @@
-package MVPModels;
+package Models;
 
 public class DataBaseModel {
     private static String url = "jdbc:mysql://localhost:3306/myDatabase?autoReconnect=true&useSSL=false";

@@ -1,4 +1,4 @@
-package MVPPresenters;
+package Presenters;
 
 import java.awt.*;
 import java.io.File;

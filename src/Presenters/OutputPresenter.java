@@ -1,8 +1,6 @@
-package MVPPresenters;
+package Presenters;
 
-import MVPViews.OutputView;
-import java.sql.SQLException;
-import static MVPPresenters.DataBasePresenter.*;
+import Views.OutputView;
 
 public class OutputPresenter {
     public static void SetUpGUI(){ OutputView.SetUpGUI(); }

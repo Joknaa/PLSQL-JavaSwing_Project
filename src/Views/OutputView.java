@@ -1,11 +1,10 @@
-package MVPViews;
+package Views;
 
-import static MVPPresenters.OutputPresenter.*;
-import static javax.swing.GroupLayout.DEFAULT_SIZE;
+import static Presenters.OutputPresenter.*;
 import static javax.swing.JOptionPane.*;
-import static MVPPresenters.InputPresenter.*;
-import MVPPresenters.OutputPresenter;
-import MVPViews.UI.*;
+import static Presenters.InputPresenter.*;
+
+import Views.UI.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -54,7 +53,10 @@ public class OutputView {
         closeButton.setMinimumSize(new java.awt.Dimension(100, 38));
         closeButton.setPreferredSize(new java.awt.Dimension(100, 38));
         closeButton.setFont(new Font("Segoe UI", Font.PLAIN, 24));
-        closeButton.addMouseListener(new OnMouseClick_CloseApp());
+        closeButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) { System.exit(0); }
+        });
     }
     public static void SetupSubmitButton(JButton submitButton, ActionListener actionListener, boolean isEnabled, String toolTip) {
         //todo: add some feed back on clicking the buttons
@@ -76,9 +78,5 @@ public class OutputView {
 
     public static void DisplayError(String error) {
         showMessageDialog(null, error, "Error", ERROR_MESSAGE);
-    }
-
-    public static class OnMouseClick_CloseApp extends MouseAdapter {
-        public void mouseClicked(MouseEvent e) { System.exit(0); }
     }
 }

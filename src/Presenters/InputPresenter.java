@@ -1,8 +1,8 @@
-package MVPPresenters;
+package Presenters;
 
-import static MVPPresenters.FilePresenter.*;
-import static MVPViews.OutputView.*;
-import static MVPPresenters.DataBasePresenter.*;
+import static Presenters.FilePresenter.*;
+import static Views.OutputView.*;
+import static Presenters.DataBasePresenter.*;
 import java.io.IOException;
 import java.sql.SQLException;
 import javax.swing.*;
