@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="@localhost" uuid="d007a45e-8886-498f-8e2c-1fbfdde9fcd7">
-      <driver-ref>mysql.8</driver-ref>
+    <data-source source="LOCAL" name="PLSQL_Project" uuid="e1658c2c-7f1e-47b4-a5b3-d8419d7c3be6">
+      <driver-ref>oracle.19</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306?serverTimezone=UCT</jdbc-url>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@//localhost:1521/XEPDB1</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

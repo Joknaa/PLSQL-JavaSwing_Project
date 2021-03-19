@@ -134,6 +134,7 @@ public class MainPanel extends JPanel implements IPanel, ActionListener {
         OutputTextArea.setPreferredSize(new Dimension(400,400));
         OutputTextArea.setAutoscrolls(false);
         OutputTextArea.setLineWrap(true);
+        OutputTextArea.setWrapStyleWord(true);
     }
     private void SetupDescriptionPanelLayout() {
         GroupLayout descriptionPanelLayout = new GroupLayout(descriptionPanel);
@@ -315,11 +316,10 @@ public class MainPanel extends JPanel implements IPanel, ActionListener {
     }
 
     private void ListSelectionChanged(ListSelectionEvent evt) {
-        String selectedValue = list.getSelectedValue();
+        int selectedIndex = list.getSelectedIndex();
         if (!evt.getValueIsAdjusting()) {
             openButton.setEnabled(true);
-            runButton.setEnabled(list.getSelectedIndex() > 2);
-            OnListSelection_UpdateDescription(selectedValue, OutputTextArea);
+            runButton.setEnabled(selectedIndex > 4 && selectedIndex <= 15 );
         }
     }
 
@@ -332,7 +332,7 @@ public class MainPanel extends JPanel implements IPanel, ActionListener {
     @Override
     public void actionPerformed(ActionEvent event) {
         if (event.getSource().equals(runButton))
-            OnClick_RunFile(list, defaultListModel, deleteButton);
+            OnClick_RunFile(list, OutputTextArea);
         else if (event.getSource().equals(openButton))
             OnClick_OpenFile(list);
     }

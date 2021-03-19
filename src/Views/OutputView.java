@@ -22,16 +22,9 @@ public class OutputView {
     }
 
     //<editor-fold desc="On-Events Actions">
-    public static void OnClick_SwapPanels(IPanel gotoPanel){
-        appFrame.GetCurrentPanel().setVisible(false);
-        appFrame.SetCurrentPanel(gotoPanel);
-    }
-    public static void OnListSelection_UpdateDescription(String selectedValue, JTextArea descriptionTable) {
-        String ItemDescription = Try_GetMediaDescription(selectedValue);
-        descriptionTable.setText(ItemDescription);
-    }
-    public static void OnClick_RunFile(JList<String> list, DefaultListModel<String> listModel, JButton deleteButton){
-        Try_RunFile(list.getSelectedValue());
+    public static void OnClick_RunFile(JList<String> list,JTextArea OutputTextArea){
+        String output = Try_RunFile(list.getSelectedValue());
+        OutputTextArea.setText(output);
     }
     public static void OnClick_OpenFile(JList<String> list){
         Try_OpenFile(list);
@@ -76,6 +69,10 @@ public class OutputView {
     }
     //</editor-fold>
 
+    public static String DisplayInputDialog(String message) {
+        return showInputDialog(null, message,
+                "Input dialog", PLAIN_MESSAGE);
+    }
     public static void DisplayError(String error) {
         showMessageDialog(null, error, "Error", ERROR_MESSAGE);
     }

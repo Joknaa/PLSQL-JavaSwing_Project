@@ -2,13 +2,13 @@ DECLARE
     v_ProductRef    NUMBER :=: v_ProductRef;
     v_Category      VARCHAR2(64);
     v_Family        VARCHAR2(64);
-    r_Product       cataloge%ROWTYPE;
+    r_Product       CATALOGUE%ROWTYPE;
     CURSOR c_ProductInfo IS
-        SELECT * FROM cataloge WHERE cataloge.Ref = v_ProductRef;
+        SELECT * FROM CATALOGUE WHERE REF = v_ProductRef;
     CURSOR c_Category IS
-        SELECT Label INTO v_Category FROM categories WHERE Code = r_Product.Category;
+        SELECT Label INTO v_Category FROM CATEGORIES WHERE Code = r_Product.Category;
     CURSOR c_Family IS
-        SELECT Label INTO v_Family FROM families WHERE Code = r_Product.Family;
+        SELECT Label INTO v_Family FROM FAMILIES WHERE Code = r_Product.Family;
 
 BEGIN
     OPEN c_ProductInfo;
@@ -23,7 +23,7 @@ BEGIN
         '- Label: ' || r_Product.Label ||
         '- Category: ' || v_Category ||
         '- Family: ' || v_Family ||
-        '- Unite Price: ' || r_Product.UnitePrice ||
+        '- Unite Price: ' || r_Product.PU ||
         '- TVA: ' || r_Product.TVA
         );
     CLOSE c_ProductInfo;

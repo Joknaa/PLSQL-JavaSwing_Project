@@ -3,10 +3,10 @@ CREATE OR REPLACE TRIGGER delivered
     ON COMMAND
     FOR EACH ROW
 BEGIN
-    IF :New.situation = 1 THEN
+    IF :New.PAID = 1 THEN
         INSERT INTO HISTORIQUE (id_cmd, id_client, date_cmd)
-        VALUES (:new.id_cmd,
-                :new.id_client,
-                :new.date_cmd);
+        VALUES (:new.COMMANDID,
+                :new.CLIENTID,
+                :new.COMMANDDATE);
     end if;
 END;

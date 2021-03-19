@@ -8,12 +8,14 @@ import java.sql.SQLException;
 import javax.swing.*;
 
 public class InputPresenter {
-    public static void Try_RunFile(String mediaName) {
+    public static String Try_RunFile(String fileName) {
+        String output = "";
         try {
-            RunFile(mediaName);
+            output = RunFile(fileName);
         } catch (SQLException | ClassNotFoundException | IOException e) {
             DisplayError(e.getMessage());
         }
+        return output;
     }
 
     public static void Try_OpenFile(JList<String> listModel) {

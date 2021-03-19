@@ -1,24 +1,14 @@
-------------fonct6
-SET SERVEROUTPUT ON;
-DECLARE
-    v_ProductID           int :=: v_ProductID;
+create or replace FUNCTION f_CalculateTurnover(v_ProductID in varchar) RETURN float
+    IS 
+    v_ProductTVA          int;
     v_ProductPrice        int;
     v_TotalQuantitySold   int;
-    v_ProductTurnover     int;
-
-    FUNCTION f_CalculateTurnover(v_ProductID int) RETURN NUMBER IS v_Turnover NUMBER;
+    v_Turnover            float;
     BEGIN
-        SELECT catalogue.PU * catalogue.TVA INTO v_ProductPrice FROM catalogue WHERE catalogue.ref = v_ProductID;
-        SELECT SUM(product.quantity) INTO v_TotalQuantitySold
-        FROM product WHERE product.commandID IN (
-            SELECT command.ID FROM command WHERE command.ProductID = v_ProductID
-            );
-        v_Turnover = v_ProductPrice * v_TotalQuantitySold;
+        SELECT catalogue.PU  INTO v_ProductPrice FROM catalogue WHERE catalogue.ref = v_ProductID;
+        SELECT catalogue.TVA INTO v_ProductTVA FROM catalogue WHERE catalogue.ref = v_ProductID;
+        SELECT SUM(command.QTE) INTO v_TotalQuantitySold FROM command WHERE command.productref  = v_ProductID ;
+
+        v_Turnover := v_ProductPrice * v_TotalQuantitySold * (1 + v_ProductTVA/100);
         RETURN v_Turnover;
     END f_CalculateTurnover;
-BEGIN
-    v_ProductTurnover := f_CalculateTurnover(v_ProductID);
-
-    DBMS_OUTPUT.PUT_LINE('The turnover for the product ' || v_ProductID ||
-                         ' is: ' || v_ProductTurnover);
-end;

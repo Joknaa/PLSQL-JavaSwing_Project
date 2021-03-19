@@ -1,19 +1,7 @@
----------fonct4
-SET SERVEROUTPUT ON;
-DECLARE
-    v_CategoryID int :=: v_CategoryID;
-    v_ArticleCount int;
-
-    FUNCTION f_CountArticles RETURN NUMBER IS v_TotalArticles NUMBER;
-    BEGIN
-        SELECT COUNT(catalogue.Ref) INTO v_TotalArticles
-        FROM catalogue WHERE catalogue.Category = v_CategoryID;
-
-        RETURN v_TotalArticles;
-    END f_CountArticles;
+create or replace FUNCTION f_CountArticles(v_CategoryID in int) RETURN NUMBER IS
+    v_TotalArticles NUMBER;
 BEGIN
-    v_ArticleCount := f_CountArticles();
+    SELECT COUNT(catalogue.Ref) INTO v_TotalArticles FROM catalogue WHERE catalogue.Category = v_CategoryID;
 
-    DBMS_OUTPUT.PUT_LINE('Lotal Articles of the category ' || v_CategoryID ||
-                         'is: ' || v_ArticleCount);
-end;
+    RETURN v_TotalArticles;
+END f_CountArticles;

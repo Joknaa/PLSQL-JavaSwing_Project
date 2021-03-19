@@ -1,9 +1,9 @@
 package Models;
 
 public class DataBaseModel {
-    private static String url = "jdbc:mysql://localhost:3306/myDatabase?autoReconnect=true&useSSL=false";
-    private static String login = "root";
-    private static String password = "";
+    private static String url = "jdbc:oracle:thin:@//localhost:1521/XEPDB1";
+    private static String login = "SYSTEM";
+    private static String password = "oknaa";
 
     public static void SetUrl(String URL){ url = URL;}
     public static void SetLogin(String LOGIN){ login = LOGIN;}
