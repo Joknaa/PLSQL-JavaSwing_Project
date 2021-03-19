@@ -9,5 +9,11 @@ public class FilePresenter {
         String Path = "SQL/".concat(fileName).concat(".sql");
         Desktop myDesktop = Desktop.getDesktop();
         myDesktop.open(new File(Path));
+        if (fileName.equals("ModélisationQ1")) {
+            Path = "SQL/Modelisation - MCD MLD.pdf";
+            myDesktop = Desktop.getDesktop();
+            myDesktop.open(new File(Path));
+        }
+
     }
 }
