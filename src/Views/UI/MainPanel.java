@@ -95,7 +95,7 @@ public class MainPanel extends JPanel implements IPanel, ActionListener {
         greetingTextArea.setText("""
                 Made by:
                     Niama Mouradi
-                    Mohamed Hamouyi
+                    Mohamed Hmouyi
                     Mohammad Laadidaoui
                 """);
     }
